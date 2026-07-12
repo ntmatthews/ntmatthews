@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whiteboard Studio</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">✦ Collaborative thinking space</p>
+          <h1>Whiteboard Studio</h1>
+          <p>Sketch concepts, erase mistakes, undo strokes, and export your board as a crisp PNG.</p>
+        </div>
+        <div class="status-card">
+          <span>Status</span>
+          <strong id="status">Ready to sketch</strong>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="toolbar" aria-label="Whiteboard tools">
+          <div class="tool-group">
+            <button class="active" data-tool="pen">✎ Pen</button>
+            <button data-tool="eraser">▱ Eraser</button>
+            <button data-tool="select">↖ Pause</button>
+          </div>
+
+          <div class="tool-group">
+            <label>🎨 Color</label>
+            <div class="swatches" id="swatches"></div>
+          </div>
+
+          <div class="tool-group">
+            <label for="brush-size" id="brush-label">Brush size: 6px</label>
+            <input id="brush-size" min="2" max="32" type="range" value="6" />
+            <div class="sizes" id="sizes"></div>
+          </div>
+
+          <div class="tool-group actions">
+            <button id="undo" disabled>↶ Undo</button>
+            <button id="clear">🗑 Clear</button>
+            <button id="download">⇩ Export</button>
+          </div>
+        </aside>
+
+        <div class="board-wrap">
+          <div class="board-header">⟳ Autosaves every completed stroke</div>
+          <canvas class="whiteboard" id="whiteboard" aria-label="Interactive drawing canvas"></canvas>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
